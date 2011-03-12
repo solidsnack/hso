@@ -48,5 +48,5 @@ all: loadfoo libfoo.static-static.so \
              libfoo.dynamic-static.so libfoo.dynamic-dynamic.so 
 
 clean:
-	rm -f *_stub.c *_stub.h *.hi *.o *.so
+	rm -f *_stub.c *_stub.h *.hi *.o *.so loadfoo
 
