@@ -1,0 +1,12 @@
+
+  This material builds off of a post from Well-Typed:
+
+    http://www.well-typed.com/blog/30
+
+  Thanks to Max Bolingbroke for help with C and linker flags:
+
+    http://www.haskell.org/pipermail/haskell-cafe/2011-March/090062.html
+
+  Loader programs for Ruby and C are provided to demonstrate the use of
+  Haskell functions from these languages.
+
