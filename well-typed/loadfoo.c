@@ -10,11 +10,11 @@ int main(int argc, char* argv[]) {
   e = dlerror();
   if ( e == NULL ) {
     printf("**** %s\n", ".so load okay");
-    int (*foo)(void) = dlsym(dl, "foo");
+    int (*foo)(int) = dlsym(dl, "foo");
     e = dlerror();
     if ( e == NULL ) {
       printf("**** %s\n", "symbol lookup okay");
-      printf("**** foo() -> %d\n", foo());
+      printf("**** foo(7) -> %d\n", foo(7));
     } else {
       printf("**** %s: %s\n", "symbol lookup error", e);
     }

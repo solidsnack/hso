@@ -4,8 +4,8 @@ module Foo where
 import Foreign.C
 
 
-foreign export ccall foo    ::  CInt
+foreign export ccall foo    ::  CInt -> CInt
 
-foo                         ::  CInt
-foo                          =  42
+foo                         ::  CInt -> CInt
+foo                          =  (+1)
 
