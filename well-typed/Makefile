@@ -1,3 +1,5 @@
+all: loadfoo libfoo.static-static.so \
+             libfoo.dynamic-static.so libfoo.dynamic-dynamic.so 
 
 loadfoo: loadfoo.c
 	gcc ./loadfoo.c -ldl -o loadfoo
@@ -43,9 +45,6 @@ libfoo.dynamic-dynamic.so: Foo.hs fooinit.c
 	    Foo.o Foo_stub.o fooinit.o \
             -L/usr/lib/ghc-6.12.1 \
             -lHSrts-ghc6.12.1
-
-all: loadfoo libfoo.static-static.so \
-             libfoo.dynamic-static.so libfoo.dynamic-dynamic.so 
 
 clean:
 	rm -f *_stub.c *_stub.h *.hi *.o *.so loadfoo
