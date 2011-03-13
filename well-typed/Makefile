@@ -1,5 +1,4 @@
-all: loadfoo libfoo.static-static.so \
-             libfoo.dynamic-static.so libfoo.dynamic-dynamic.so 
+all: loadfoo libfoo.static-static.so libfoo.dynamic-dynamic.so
 
 loadfoo: loadfoo.c
 	gcc ./loadfoo.c -ldl -o loadfoo
