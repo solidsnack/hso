@@ -43,6 +43,7 @@ libfoo.dynamic-dynamic.so: Foo.hs fooinit.c
 	ghc -shared -dynamic -o libfoo.dynamic-dynamic.so \
 	    Foo.o Foo_stub.o fooinit.o \
             -L/usr/lib/ghc-6.12.1 \
+            -optl-Wl,-rpath,/usr/lib/ghc-6.12.1 \
             -lHSrts-ghc6.12.1
 
 clean:
