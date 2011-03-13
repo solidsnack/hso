@@ -1,3 +1,5 @@
+include ./ghc_info.mk
+
 all: loadfoo libfoo.static-static.so libfoo.dynamic-dynamic.so
 
 loadfoo: loadfoo.c
@@ -25,9 +27,9 @@ libfoo.dynamic-dynamic.so: Foo.hs fooinit.c
 	ghc --make -dynamic -fPIC -c Foo.hs
 	ghc -shared -dynamic -o libfoo.dynamic-dynamic.so \
 	    Foo.o Foo_stub.o fooinit.o \
-            -L/usr/lib/ghc-6.12.1 \
-            -optl-Wl,-rpath,/usr/lib/ghc-6.12.1 \
-            -lHSrts-ghc6.12.1
+            -L${GHC_LIB_RTS} \
+            -optl-Wl,-rpath,${GHC_LIB_RTS} \
+            -lHSrts-ghc${GHC_VERSION}
 
 clean:
 	rm -f *_stub.c *_stub.h *.hi *.o *.so loadfoo

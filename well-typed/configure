@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ghc_version=`ghc-pkg --version | awk '{ print $NF }'`
+rts_lib_dir=`ghc-pkg describe rts | fgrep library-dirs | awk '{ print $NF }'`
+
+exec 1>./ghc_info.mk
+echo "GHC_VERSION=$ghc_version"
+echo "GHC_LIB_RTS=$rts_lib_dir"
+
