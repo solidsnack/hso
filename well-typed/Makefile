@@ -1,5 +1,7 @@
 include ./ghc_info.mk
 
+dyn: loadfoo libfoo.dynamic-dynamic.so
+
 all: loadfoo libfoo.static-static.so libfoo.dynamic-dynamic.so
 
 loadfoo: loadfoo.c
